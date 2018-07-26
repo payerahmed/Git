@@ -1,6 +1,7 @@
 body{
   margin: 0;
   padding: 0;
+  font-size: 14px;
   font-family:  Roboto,-apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI","Oxygen","Ubuntu","Cantarell","Open Sans",sans-serif;
   
   
@@ -9,52 +10,50 @@ body{
 .hader{
   display: flex;
   justify-content: space-around;
-  background-color :rgb(14, 13, 13);
   font-size:1.3em;
+}
+.bar{
+  display: flex;
   padding: 30px;
-
+  flex-basis: 100%;
+  background-color :rgb(14, 13, 13);
+  justify-content: space-around;
 }
-.target>i{
-  position: absolute;
-  width: 100%;
-  padding: 10px 20px;
-  text-align: right;
-  box-sizing: border-box;
-  font-size: 30px;
-  background-color: rgb(7, 6, 6);
-  color:white;
-  right: 0;
-  display: none;
+.hader-icon{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(31, 29, 29);      
 }
-@media screen and (max-width: 600px) and (min-width: 200px){
-  .target>i{
-    display: block;
-  }
-  .h1>i{
-    position: absolute;
-    padding-bottom: 20px;
-  }
-  .h2>input{
-    width: 100%;
-    float: left;
-  }
-  .h1>a{
-    text-align: center;
-  }
-  .hader{
-    flex-direction: row;
-  }
-}
-
 .h1>i{
-  font-size: 50px;
-  color:white;
+  display: none;
 }
 .h1>a{
   text-decoration: none;
   color: white; 
   margin: 10px;
   margin-bottom: 15px;
+}
+
+.hader-icon1>i{
+  display: none;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-size: 30px;
+  color:white;
+}
+
+label{
+  display: none;
+  position: absolute;
+  right: 0;
+  font-size: 1.5em;
+  color: gray;
+
+}
+#toggle{
+  display: none;
+
 }
 .h2>a{
   text-decoration: none;
@@ -63,22 +62,60 @@ body{
   text-align: center;
 }
 .h2>input{
-  padding: 10px;
-  width: 300px;
-  background-color:grey;
-  border: 2px solid grey;
+  padding: 6px 8px;
+  width: 250px;
+  line-height: 20px;
+  margin: 0 auto 5px auto;
+  background-color:#24292e;
+  border: 2px solid #24292e;;
 
 }
 .h2>input::placeholder{
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
   color:rgb(180, 174, 174);
 }
 .h2>span{
   font-weight: bold;
   color: grey;
-
 }
+@media screen and (max-width: 600px) and (min-width: 200px){
+  body{
+    text-align: center;
+  }
+  .hader{}
+ 
+  .hader-icon1>i{
+    display: block;
+  }
+  .con{
+    display: flex;
+    flex-direction: column;
+  }
+  .thrdcon{
+    display: flex;
+    flex-direction: row;
+  }
+  .bar{
+    display: none;
+  }
+  .h1 a{
+    display: block;
+  }
+  
+   label{
+    display: block;
+    position: absolute;
+    color: grey;
+    top: 5px;
+    right:15px;
+  
+  }
+  #toggle:checked + .bar{
+    display: block;
+  }
+}
+
 .con{
   display: flex;
   background-color:rgb(34, 33, 33);
@@ -88,7 +125,7 @@ body{
   width: 50%;
 }
 .con1>h1{
-  font-size: 6em;
+  font-size:5em;
   color: white;
 }
 .con1>p{
@@ -131,11 +168,48 @@ body{
 .con2>form>button{
   padding: 20px;
   border: none;
-  background-color:green;
+  background-color:#34d058;
   width: 100%; 
   font-size: 1.2em;
   color: white;
   border-radius: 5px;
+}
+@media(max-width:640px){
+  .con{
+    display: block;
+    
+  }
+  .con1{
+  }
+  .con1>h1{
+    font-size: 3em;
+    text-align: center;
+  }
+  .con1>p{
+    width: 150%;
+    font-size: 1.5em;
+  }
+  .con2{
+  font-size: 1.2em;
+  margin: 0;
+
+  }
+  .con2>form{
+    margin: auto;
+    text-align: start;
+  }
+  .con2>form>input{
+    padding: 8px;
+  }
+  .con2>form>input::placeholder{
+    font-size: 1em;
+  }
+  .con2>form>button{
+    margin: 0 20% 0 20%;
+    padding: 12px;
+    font-size: 1em;
+    
+  }
 }
 .thrdcon{
   display: flex;
@@ -157,13 +231,11 @@ text-align: center;
 .thrdcon>button{
   font-size: 1.5em;
   padding: 20px;
-  color:blue;
+  color:#0366d6;;
   border: 2px solid grey;
   border-radius: 5px;
   margin-left: 40%;
   margin-right: 40%;
-
-
 }
 .thrdcon1{
   text-align: left;
@@ -174,9 +246,6 @@ text-align: center;
 }
 .img>img{
   height: 90vh;
-  
-  
-
 }
 .thrdcon2>h2{
   margin-left: 20%;
@@ -187,6 +256,53 @@ text-align: center;
   font-size: 1.5em;
   width: 80%;
   margin-left: 20%;
+}
+@media(max-width:640px){
+  .thrdcon{
+    
+    border-top: 1px solid grey
+  }
+  .thrdcon>h2{
+    font-size: 1.1em
+  }
+  .thrdcon>h1{
+    font-size: 36px;
+    font-weight: 300;
+  
+  }
+  .thrdcon>p{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #586069;
+  }
+  .thrdcon>button{
+    margin: 0 20% 0 20%;
+    padding: .75em 1.25em;
+    font-size: inherit;
+    border-radius: 6px;
+  }
+  .thrdcon1{
+    margin-top:0;
+    display:block;
+  }
+  .img>img{
+    max-width: 100% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+  .thrdcon2>h2{
+    margin-left: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+  
+  }
+  .thrdcon2>p{
+    margin-left: 0;
+    color: #24292e !important;
+    font-size: 1em;
+  
+  }
 
 }
 .fure{
@@ -214,6 +330,7 @@ text-align: center;
   border-radius: 5px;
 }
 .fure>button>a{
+  width: 100px;
   color:blue;
   text-decoration: none;
 }
@@ -263,6 +380,82 @@ text-align: center;
   text-decoration: none;
   margin-left: 20%;
 }
+@media(max-width:640px){
+  .fure{
+    margin-top: 0;
+    text-align: center;
+    
+  }
+  .fure>h3{
+    font-size: 1.1em;
+  }
+  .fure>h1{
+    font-size: 36px;
+    font-weight: 300;
+  }
+  .fure>p{
+    margin-bottom: 30px;
+    padding: .75em 1.25em;
+    font-weight: 300;
+    color: #586069;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .fure>button{
+    font-size:1.2em;
+    padding: .75em 1.25em;
+    color: #0366d6;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid gray
+  }
+  .fure>button>a{
+  }
+  .fure1{
+    display:block;
+  }
+  .fure11{
+    text-align: start;
+  }
+  .fure11>h1{
+    font-size: 1.3em;
+    font-weight: 400;
+  }
+  .fure11>p{
+   font-size: 1.1em 
+    
+  }
+  
+  .fure12>img{
+   max-height:180px;
+   max-width: 100%;
+   margin: 10% 0 10% 0;
+    
+  }
+  .fure13{
+    margin: 0;
+    position: relative;
+    border:1px solid grey;
+  }
+  .fure13>i{
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    font-size: 4em;
+  }
+  .fure13>h1{
+    font-size: 1.3em;
+    
+  }
+  .fure13>p{
+    font-size: 1em;
+  }
+  .fure13>a{
+    font-size:1em;
+  
+  }
+
+}
 .six{
   display: flex;
   margin: 5% 15% 5% 15%;
@@ -297,6 +490,15 @@ margin-top: 5%;
 .six1>a{
   font-size: 1.5em;
   text-decoration: none;
+}
+@media(max-width:640px){
+  .six{
+    margin: 0;
+    display:block;
+  }
+  .six>img{
+    height: 100px;
+  }
 }
 .saven1{
   margin:5% 0% 5% 0%;
